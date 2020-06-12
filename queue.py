@@ -36,4 +36,4 @@ class Queue:
         while current:
             values.append(current.val)
             current = current.next
-        print(values)
+        return values

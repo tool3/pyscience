@@ -14,7 +14,7 @@ class Graph:
         self.adjacency[src].append(dst)
         self.adjacency[dst].append(src)
 
-    def print(self, vertex):
+    def breadth_first(self, vertex):
         visited = {vertex: True}
         result = [vertex]
         self.queue.enqueue(vertex)
@@ -26,4 +26,14 @@ class Graph:
                     visited[neighbor] = True
                     self.queue.enqueue(neighbor)
                     result.append(neighbor)
-        print(result)
+        return result
+
+    def depth_first(self, vertex, result=[], visited={}):
+        if not vertex:
+            return None
+        result.append(vertex)
+        visited[vertex] = True
+        for neighbor in self.adjacency[vertex]:
+            if not neighbor in visited:
+                self.depth_first(neighbor, result, visited)
+        return result

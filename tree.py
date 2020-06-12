@@ -45,7 +45,7 @@ class BinaryTree:
                     self.queue.enqueue(current.left)
                 if current.right is not None:
                     self.queue.enqueue(current.right)
-        print(result)
+        return result
 
     def depth_first(self):
         result = []
@@ -57,4 +57,4 @@ class BinaryTree:
             if node.right:
                 traverse(node.right)
         traverse(self.root)
-        print(result)
+        return result
