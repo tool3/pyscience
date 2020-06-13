@@ -9,7 +9,7 @@ class Node:
         self.right = None
 
 
-class BinaryTree:
+class BinarySearchTree:
     def __init__(self):
         self.root = None
         self.queue = Queue()
