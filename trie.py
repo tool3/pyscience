@@ -19,7 +19,7 @@ class Trie:
             return
         elif not first_letter in node.letters:
             node.letters[first_letter] = new_node
-            self.add_word(word[1:], node.letters[first_letter])
+            self.add_word(word[1:], new_node)
         else:
             self.add_word(word[1:], node.letters[first_letter])
 
